@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: php-pesbuk
+  labels:
+    app: pesbuk
+spec:
+  volumes:
+    - name: config-fb
+      configMap:
+        name: p-fb-configmap
+    
+  containers:
+  - name: php-sosmed
+    image: sekolahdevopscilsy/php-sosmed
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: config-fb
+      mountPath: "/var/www/html/config.php"
+      subPath: "config.php"
+  
+  - name: mysql-sosmed
+    image: sekolahdevopscilsy/mysql-sosmed
+    ports:
+    - containerPort: 3306
+    env:
+      - name: MYSQL_ROOT_PASSWORD 
+        value: "1234567890"

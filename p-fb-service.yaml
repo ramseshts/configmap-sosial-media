@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pesbuk-service
-  namespace: devops-ramses
+  namespace: devops-ramses-configmap
 spec:
   selector:
     app: pesbuk

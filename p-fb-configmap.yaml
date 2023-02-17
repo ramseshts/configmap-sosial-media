@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: p-fb-configmap
-  namespace: devops-ramses
+  namespace: devops-ramses-configmap
   labels:
     app: pesbuk
 data:
